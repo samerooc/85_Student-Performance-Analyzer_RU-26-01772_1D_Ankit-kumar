@@ -52,7 +52,7 @@ Riya | 195 | 65.00% | C
 Karan | 125 | 41.67% | D
 ```
 **Output Screenshot:**
-![Test Case 1](test/tc1.png)
+![Test Case 1](../test/tc1.png)
 
 ---
 
@@ -70,7 +70,7 @@ Neha | 300 | 100.00% | A
 Ravi | 0 | 0.00% | F
 ```
 **Output Screenshot:**
-![Test Case 2](test/tc2.png)
+![Test Case 2](../test/tc2.png)
 
 ---
 
@@ -84,7 +84,7 @@ Amit,85,abc,70
 Invalid marks for Amit in Physics: 'abc'. Row skipped.
 ```
 **Output Screenshot:**
-![Test Case 3](test/tc3.png)
+![Test Case 3](./test/tc3.png)
 
 ---
 
