@@ -1,5 +1,3 @@
-# 85_Student-Performance-Analyzer_RU-26-01772_1D_Ankit-kumar
-
 # Student Performance Analyzer (PS No. 85)
 
 A Python-based console application that reads student marks from a CSV dataset, validates entries, calculates total marks, percentages, and grades, computes class statistics, and visualizes performance using charts.
