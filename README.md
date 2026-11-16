@@ -107,3 +107,4 @@ Bar chart displayed
 **Terminal & Chart Screenshots:**
 ![Test Case 4 Output](test/tc4.png)
 ![Bar Chart and Histogram](test/chart.png)
+![chart2](test/chart2.png)
