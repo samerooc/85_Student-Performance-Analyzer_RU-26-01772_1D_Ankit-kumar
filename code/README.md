@@ -84,7 +84,7 @@ Amit,85,abc,70
 Invalid marks for Amit in Physics: 'abc'. Row skipped.
 ```
 **Output Screenshot:**
-![Test Case 3](./test/tc3.png)
+![Test Case 3](../test/tc3.png)
 
 ---
 
