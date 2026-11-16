@@ -105,5 +105,5 @@ Subject averages: Maths 60.00, Physics 56.67, Chemistry 70.00
 Bar chart displayed
 ```
 **Terminal & Chart Screenshots:**
-![Test Case 4 Output](test/tc4.png)
-![Bar Chart and Histogram](test/chart.png)
+![Test Case 4 Output](../test/tc4.png)
+![Bar Chart and Histogram](../test/chart.png)
