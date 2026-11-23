@@ -17,81 +17,79 @@ percentages = []
 grades = []
 
 # EVERY STUDENT data check
-for i in range(len(df)):
-    row = df.iloc[i]
-    name = str(row["name"]).strip()
+def check_data():
+    for i in range(len(df)):
+        row = df.iloc[i]
+        name = str(row["name"]).strip()
 
-    # Maths check
-    val_m = str(row["maths"]).strip()
-    if val_m.isdigit():
-        m = float(val_m)
-        if m < 0 or m > 100:
+        # Maths check
+        val_m = str(row["maths"]).strip()
+        if val_m.isdigit():
+            m = float(val_m)
+            if m < 0 or m > 100:
+                print(f"Invalid marks for {name} in Maths: '{val_m}'. Row skipped.")
+                continue
+        else:
             print(f"Invalid marks for {name} in Maths: '{val_m}'. Row skipped.")
             continue
-    else:
-        print(f"Invalid marks for {name} in Maths: '{val_m}'. Row skipped.")
-        continue
 
-    # Physics check
-    val_p = str(row["physics"]).strip()
-    if val_p.isdigit():
-        p = float(val_p)
-        if p < 0 or p > 100:
+        # Physics check
+        val_p = str(row["physics"]).strip()
+        if val_p.isdigit():
+            p = float(val_p)
+            if p < 0 or p > 100:
+                print(f"Invalid marks for {name} in Physics: '{val_p}'. Row skipped.")
+                continue
+        else:
             print(f"Invalid marks for {name} in Physics: '{val_p}'. Row skipped.")
             continue
-    else:
-        print(f"Invalid marks for {name} in Physics: '{val_p}'. Row skipped.")
-        continue
 
-    # Chemistry check
-    val_c = str(row["chemistry"]).strip()
-    if val_c.isdigit():
-        c = float(val_c)
-        if c < 0 or c > 100:
+        # Chemistry check
+        val_c = str(row["chemistry"]).strip()
+        if val_c.isdigit():
+            c = float(val_c)
+            if c < 0 or c > 100:
+                print(f"Invalid marks for {name} in Chemistry: '{val_c}'. Row skipped.")
+                continue
+        else:
             print(f"Invalid marks for {name} in Chemistry: '{val_c}'. Row skipped.")
             continue
-    else:
-        print(f"Invalid marks for {name} in Chemistry: '{val_c}'. Row skipped.")
-        continue
 
-    # Total AND Percentage
-    total = m + p + c
-    if total.is_integer():
-        total = int(total)
+        # Total AND Percentage
+        total = m + p + c
+        if total.is_integer():
+            total = int(total)
 
-    pct = (total / 300) * 100
+        pct = (total / 300) * 100
 
-    # Grade check
-    if pct >= 90:
-        grade = "A"
-    elif pct >= 75:
-        grade = "B"
-    elif pct >= 60:
-        grade = "C"
-    elif pct >= 40:
-        grade = "D"
-    else:
-        grade = "F"
+        # Grade check
+        if pct >= 90:
+            grade = "A"
+        elif pct >= 75:
+            grade = "B"
+        elif pct >= 60:
+            grade = "C"
+        elif pct >= 40:
+            grade = "D"
+        else:
+            grade = "F"
 
-    # check test pass OR NO
-    names.append(name)
-    maths_marks.append(m)
-    phy_marks.append(p)
-    chem_marks.append(c)
-    totals.append(total)
-    percentages.append(pct)
-    grades.append(grade)
+        # check test pass OR NO
+        names.append(name)
+        maths_marks.append(m)
+        phy_marks.append(p)
+        chem_marks.append(c)
+        totals.append(total)
+        percentages.append(pct)
+        grades.append(grade)
 
-# Menu load
-print("\n1. Result")
-print("2. Statistics")
-choice = input("Enter your choice: ")
 
-if choice == "1":
+def show_result():
     for i in range(len(names)):
         print(f"{names[i]} | {totals[i]} | {percentages[i]:.2f}% | {grades[i]}")
 
-elif choice == "2":
+
+def show_statistics():
     # find mean, median, std dev
     arr = np.array(percentages)
     mean_pct = np.mean(arr)
@@ -134,5 +132,27 @@ elif choice == "2":
 
     print("Bar chart displayed")
 
-else:
-    print("Wrong choice")
+
+# Menu load
+def main():
+    check_data()
+    while True:
+        print("\n1. Result")
+        print("2. Statistics")
+        print("3. Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            show_result()
+
+        elif choice == "2":
+            show_statistics()
+
+        elif choice == "3":
+            break
+
+        else:
+            print("Wrong choice")
+
+
+main()
